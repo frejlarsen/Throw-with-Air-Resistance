@@ -26,9 +26,7 @@ df_dt = @(t,x) [dx1_dt(t,x);
 
 [t,y] = ode45(df_dt, [0 time], [0, speed_initial*cos(deg2rad(angle_initial)), 0, speed_initial*sin(deg2rad(angle_initial))]);
 
-y_chosen = y(:,[1 3]);
 %%% plotting functions
 figure(1)
 plot(t, y);
 legend(["x", "dx", "y", "dy"]);
-%legend(["x","y"]);
